@@ -222,7 +222,4 @@ public class Proba
     		Path = "不可达";
     	return Path;
     } //计算两个单词之间的最短路径
-    private String randomWalk() {
-    	return null;
-    } //随机游走
 }
