@@ -189,6 +189,10 @@ public class Proba
     } //计算两个单词之间的最短路径
     private String randomWalk() {
     	return null;
+
     } //随机游走
-// i am B1 proba
+
+   
+// i am C4  PROBA
+
 }
