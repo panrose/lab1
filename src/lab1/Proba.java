@@ -190,4 +190,5 @@ public class Proba
     private String randomWalk() {
     	return null;
     } //Ëæ»úÓÎ×ß
+// i am B1 proba
 }
