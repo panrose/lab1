@@ -49,7 +49,7 @@ import java.io.InputStreamReader;
 *    gv.addln("A -> C;");
 *    gv.addln(gv.end_graph());
 *    System.out.println(gv.getDotSource());
-*
+*	
 *    String type = "gif";
 *    File out = new File("out." + type);   // out.gif in this example
 *    gv.writeGraphToFile( gv.getGraph( gv.getDotSource(), type ), out );
@@ -91,6 +91,7 @@ private StringBuilder graph = new StringBuilder();
  */
 public GraphViz() {
 }
+//this is B2 graph
 
 /**
  * Returns the graph's source description in dot language.

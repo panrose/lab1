@@ -84,6 +84,7 @@ public class Proba
     	} 
     	file.close();
     	return text;
+//this is B2 proba
     }
     private void showDirectedGraph(HashMap<String,Integer> list)//展示有向图，并存为.jpg
     {
