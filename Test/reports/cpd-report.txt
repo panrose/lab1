@@ -1,0 +1,144 @@
+Found a 16 line (173 tokens) duplication in the following files: 
+Starting at line 850 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 875 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+				System.out.println("后续无节点");
+				GraphViz gv = new GraphViz();
+				gv.addln(gv.start_graph());
+				Set<Entry<String, Integer>> sets = neighbor.entrySet();
+				for (Entry<String, Integer> entry : sets) {
+					String t = entry.getKey();
+		        	if(path_temp.get(t)==1)
+		        		gv.addln(t+" [ label = " + "\"" + entry.getValue().toString()+ "\" " + " color = red" +" ];" );
+		        	else
+		        		gv.addln(t+" [ label = " + "\"" + entry.getValue().toString()+ "\"" +" ];" );
+				}
+				gv.addln(gv.end_graph());
+				System.out.println(gv.getDotSource());
+				String type = "jpg";
+				File out = new File("E:/软件工程/实验/实验1" + type);
+				gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), type), out);
+=====================================================================
+Found a 10 line (84 tokens) duplication in the following files: 
+Starting at line 642 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 857 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 883 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+        		gv.addln(t+" [ label = " + "\"" + entry.getValue().toString()+ "\" " + neiColor.get(t) +" ];" );
+        	else
+        		gv.addln(t+" [ label = " + "\"" + entry.getValue().toString()+ "\"" +" ];" );
+		}
+		gv.addln(gv.end_graph());
+		System.out.println(gv.getDotSource());
+		//System.out.println("看见了吗"); 
+		String type = "jpg";
+		File out = new File("E:/软件工程/实验/实验1" + type);
+		gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), type), out);
+=====================================================================
+Found a 28 line (52 tokens) duplication in the following files: 
+Starting at line 454 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 487 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 521 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+				jTextField1.setText("");
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			});
+=====================================================================
+Found a 5 line (43 tokens) duplication in the following files: 
+Starting at line 376 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 559 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+					ImageIcon icon = new ImageIcon("E:/软件工程/实验/实验1jpg");
+					icon.setImage(icon.getImage().getScaledInstance(
+							jLabel1.getWidth(), jLabel1.getHeight(),
+							Image.SCALE_DEFAULT));
+					jLabel1.setIcon(icon);
+=====================================================================
+Found a 9 line (29 tokens) duplication in the following files: 
+Starting at line 120 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 143 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 274 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+										.createSequentialGroup()
+										.addGroup(
+												layout
+														.createParallelGroup(
+																javax.swing.GroupLayout.Alignment.LEADING)
+														.addGroup(
+																layout
+																		.createSequentialGroup()
+																		.addGap(
+=====================================================================
+Found a 6 line (29 tokens) duplication in the following files: 
+Starting at line 633 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 850 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 875 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+		p.graphBuild(neighbor, numWord);
+		//p.showDirectedGraph(neighbor);
+
+		GraphViz gv = new GraphViz();
+		gv.addln(gv.start_graph());
+		Set<Entry<String, Integer>> sets = list.entrySet();
+=====================================================================
+Found a 5 line (28 tokens) duplication in the following files: 
+Starting at line 253 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 266 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+																				jTextField1,
+																				javax.swing.GroupLayout.PREFERRED_SIZE,
+																				javax.swing.GroupLayout.DEFAULT_SIZE,
+																				javax.swing.GroupLayout.PREFERRED_SIZE)
+																		.addComponent(
+=====================================================================
+Found a 4 line (27 tokens) duplication in the following files: 
+Starting at line 638 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 853 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 879 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+		Set<Entry<String, Integer>> sets = list.entrySet();
+		for (Entry<String, Integer> entry : sets) {
+			String t = entry.getKey();
+        	if(neiColor.containsKey(t))
+=====================================================================
+Found a 2 line (27 tokens) duplication in the following files: 
+Starting at line 820 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 841 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+		Integer[] nextarray = arraylist.get(begin).toArray(
+				new Integer[arraylist.get(begin).size()]);
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 253 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 266 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+Starting at line 271 of F:\MyEclipse\workspace\Test\src\hey\Hi.java
+
+																				jTextField1,
+																				javax.swing.GroupLayout.PREFERRED_SIZE,
+																				javax.swing.GroupLayout.DEFAULT_SIZE,
+																				javax.swing.GroupLayout.PREFERRED_SIZE)
