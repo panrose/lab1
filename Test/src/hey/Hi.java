@@ -174,19 +174,19 @@ new HashMap<String, String>(); //
 /**
  *
  */
-private static Map<String, Integer> neighbor =
+public static Map<String, Integer> neighbor =
 new HashMap<String, Integer>();
 //存储图中的边及其出现次数
 /**
 *
 */
-private static Map<String, Integer> numWord =
+public static Map<String, Integer> numWord =
 new HashMap<String, Integer>();
 //存储不同单词的编号
 /**
 *
 */
-private static Map<Integer, String> word =
+public static Map<Integer, String> word =
 new HashMap<Integer, String>(); //与numWord键值相反
 /**
 *
@@ -671,7 +671,7 @@ jLabel1.setIcon(icon);
  * @param nei is a
  * @param nUm is a number
  */
-private void graphBuild(final Map<String, Integer> nei,
+public void graphBuild(final Map<String, Integer> nei,
 final Map<String, Integer> nUm) {
 final int numsize = nUm.size();
 graph = new int[numsize + 1][];
@@ -692,7 +692,7 @@ graph[nUm.get(list[0])][nUm.get(list[1])] = entry.getValue();
 /**
  * @param list LIST.
  */
-private void wordNum(final String[] list) { //给已出现单词标序号
+public void wordNum(final String[] list) { //给已出现单词标序号
 int count = 0;
 for (int i = 0; i < list.length; i++) {
 if (!numWord.containsKey(list[i])) {
@@ -705,7 +705,7 @@ numofWord = count;
 /**
  * @param list LISTR
  */
-private void mapCount(final String[] list) { //边出现次数统计与记录
+public void mapCount(final String[] list) { //边出现次数统计与记录
 String temp;
 for (int i = 0; i < list.length - 1; i++) {
 arraylist.add(new HashSet<Integer>());
@@ -727,7 +727,7 @@ pathRecord.put(temp, 0);
  * @return RETURN.
  * @throws IOException IOEC.
  */
-private String readFile(final String filename) throws IOException { //读文件
+public String readFile(final String filename) throws IOException { //读文件
 final BufferedReader file = new BufferedReader(new FileReader(filename));
 String text = "";
 String line = file.readLine();
@@ -744,7 +744,7 @@ return text;
  * @param pops P.
  * @throws IOException IOEV.
  */
-private void showDirectedGraph(final Map<String, Integer> list,
+public void showDirectedGraph(final Map<String, Integer> list,
 final String path, final Hi pops) throws IOException {
 //展示有向图，并存为.jpg
 String text = pops.readFile(path);
@@ -782,7 +782,7 @@ gvce.writeGraphToFile(gvce.getGraph(gvce.getDotSource(), type), out);
  * @param word2 WORD2.
  * @return RETURNV.
  */
-private String queryBridgeWords(final String word1, final String word2) {
+public String queryBridgeWords(final String word1, final String word2) {
 String bridgewords = "不存在";
 if (!numWord.containsKey(word1)) {
 bridgewords += (" " + word1);
@@ -818,7 +818,7 @@ return bridgewords;
  * @param inputText INPUT.
  * @return RETURNL.
  */
-private String generateNewText(final String inputText) {
+public String generateNewText(final String inputText) {
 int jdfg;
 String newText = "", bridge = "";
 final String[] text = inputText.split("\\s+");
