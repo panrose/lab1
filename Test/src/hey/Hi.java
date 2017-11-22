@@ -38,178 +38,188 @@ event();
  *
  */
 private static Hi pmdl;
+
+private Graph graphmain = new Graph();
+
+public Graph getGraphmain() {
+    return graphmain;
+}
+
+public void setGraphmain(Graph graphmain) {
+    this.graphmain = graphmain;
+}
+private Sourcetext textmain = new Sourcetext();
+
+public Sourcetext getTextmain() {
+    return textmain;
+}
+
+public void setTextmain(Sourcetext textmain) {
+    this.textmain = textmain;
+}
 /**
 *
 */
-private static final int CABD = 105;
+private static   int CABD = 105;
 /**
 *
 */
-private static final int CAB = 100000000;
+private static   int CAB = 100000000;
 /**
 *
 */
-private static final int ABUM = 93;
+private static   int ABUM = 93;
 /**
 *
 */
-private static final int CDUM = 81;
+private static   int CDUM = 81;
 /**
 *
 */
-private static final int EFUM = 50;
+private static   int EFUM = 50;
 /**
 *
 */
-private static final int GHUM = 590;
+private static   int GHUM = 590;
 /**
 *
 */
-private static final int IJUM = 79;
+private static   int IJUM = 79;
 /**
 *
 */
-private static final int NUM = 47;
+private static   int NUM = 47;
 /**
 *
 */
-private static final int WUM = 65;
+private static   int WUM = 65;
 /**
 *
 */
-private static final int QUM = 103;
+private static   int QUM = 103;
 /**
 *
 */
-private static final int AZUM = 64;
+private static   int AZUM = 64;
 /**
 *
 */
-private static final int MUM = 325;
+private static   int MUM = 325;
 /**
 *
 */
-private static final int HUM = 72;
+private static   int HUM = 72;
 /**
 *
 */
-private static final int VUM = 45;
+private static   int VUM = 45;
 /**
 *
 */
-private static final int BUM = 66;
+private static   int BUM = 66;
 /**
 *
 */
-private static final int UUM = 12;
+private static   int UUM = 12;
 /**
 *
 */
-private static final int GUM = 197;
+private static   int GUM = 197;
 /**
 *
 */
-private static final int FUM = 52;
+private static   int FUM = 52;
 /**
 *
 */
-private static final int LUM = 40;
+private static   int LUM = 40;
 /**
 *
 */
-private static final int RUM = 318;
+private static   int RUM = 318;
 /**
 *
 */
-private static final int EUM = 36;
+private static   int EUM = 36;
 /**
 *
 */
-private static final int IUM = 603;
+private static   int IUM = 603;
 /**
 *
 */
-private static final int TUM = 18;
+private static   int TUM = 18;
 /**
 *
 */
-private static final int OUM = 670;
+private static   int OUM = 670;
 /**
 *
 */
-private static final int AUM = 51;
+private static   int AUM = 51;
 /**
 *
 */
-private static final int XUM = 204;
+private static   int XUM = 204;
 /**
 *
 */
-private static final int PUM = 255;
+private static   int PUM = 255;
 /**
 *
 */
-private static final int SUM = 33;
+private static   int SUM = 33;
 /**
 *
 */
-private static final int ZUM = 87;
+private static   int ZUM = 87;
 /**
  *
  */
-private static final int KUM = 20;
+private static   int KUM = 20;
 /**
 *
 */
-private static final int CUM = 5;
+private static   int CUM = 5;
 /**
  *
  */
-private static String[] useColor = {"red", "green", "blue", "pink", "gray"}; //
 /**
 *
 */
-private static Map<String, String> neiColor = 
+private  Map<String, String> neiColor = 
 new HashMap<String, String>(); //
 /**
  *
  */
-public static Map<String, Integer> neighbor =
+public  Map<String, Integer> neighbor =
 new HashMap<String, Integer>();
 //存储图中的边及其出现次数
 /**
 *
 */
-public static Map<String, Integer> numWord =
+public  Map<String, Integer> numWord =
 new HashMap<String, Integer>();
 //存储不同单词的编号
 /**
 *
 */
-public static Map<Integer, String> word =
+public Map<Integer, String> word =
 new HashMap<Integer, String>(); //与numWord键值相反
+
 /**
 *
 */
-private static Map<String, Integer> pathRecord =
-new HashMap<String, Integer>(); //
-/**
-*
-*/
-private static ArrayList<HashSet<Integer>> arraylist =
+private  ArrayList<HashSet<Integer>> arraylist =
 new ArrayList<HashSet<Integer>>(); //
 /**
 *
 */
-private static int numofWord; //
+private int[][] graph; //
 /**
 *
 */
-private static int[][] graph; //
-/**
-*
-*/
-private static String filepath = ""; //
+private  String filepath = ""; //
 
 /** Creates new form Hi. */
 public Hi() {
@@ -246,7 +256,7 @@ jButton3.setText("\u67e5\u8be2\u6865\u63a5\u8bcd");
 jButton4.setText("\u751f\u6210\u65b0\u6587\u672c");
 jButton5.setText("\u6700\u77ed\u8def\u5f84");
 jButton5.addActionListener(new ActionListener() {
-public void actionPerformed(final ActionEvent evt) {
+public void actionPerformed(  ActionEvent evt) {
 jButton5ActionPerformed(evt);
 }
 });
@@ -258,7 +268,7 @@ jTextField2.setColumns(KUM);
 jTextField2.setText("word1");
 jTextField2.setToolTipText("");
 jTextField3.setText("word2");
-final javax.swing.GroupLayout LaYout = new javax.swing.GroupLayout(
+  javax.swing.GroupLayout LaYout = new javax.swing.GroupLayout(
 getContentPane());
 getContentPane().setLayout(LaYout);
 LaYout
@@ -495,7 +505,7 @@ pack();
  * Function.
  * @param evt Event.
  */
-private void jButton5ActionPerformed(final ActionEvent evt) {
+private void jButton5ActionPerformed(  ActionEvent evt) {
 // TODO add your handling code here:
 }
 
@@ -503,14 +513,14 @@ private void jButton5ActionPerformed(final ActionEvent evt) {
  *
  */
 
-public final void event() {
+public   void event() {
 jButton1.addActionListener(new ActionListener() {
 @Override
-public void actionPerformed(final ActionEvent evmd) {
+public void actionPerformed(  ActionEvent evmd) {
 // TODO Auto-generated method stub
 String path = null;
-final JFileChooser cmdf = new JFileChooser();
-final int icec = cmdf.showOpenDialog(null);
+  JFileChooser cmdf = new JFileChooser();
+  int icec = cmdf.showOpenDialog(null);
 if (icec == JFileChooser.APPROVE_OPTION) {
 path = cmdf.getSelectedFile().getAbsolutePath();
 filepath = path;
@@ -518,12 +528,13 @@ filepath = path;
 System.out.println("未选中文件");
 }
 try {
+    neighbor = textmain.getNeighbor();
 showDirectedGraph(neighbor, path, pmdl);
 } catch (IOException e1) {
 // TODO Auto-generated catch block
 e1.printStackTrace();
 }
-final ImageIcon icon = new ImageIcon("E:/软件工程/实验/实验1jpg");
+  ImageIcon icon = new ImageIcon("E:/软件工程/实验/实验1jpg");
 icon.setImage(icon.getImage().getScaledInstance(
 jLabel1.getWidth(), jLabel1.getHeight(),
 Image.SCALE_DEFAULT));
@@ -533,9 +544,10 @@ jLabel1.setBounds(0, 0, CABD, EFUM);
 });
 jButton2.addActionListener(new ActionListener() {
 @Override
-public void actionPerformed(final ActionEvent esdf) {
+public void actionPerformed(  ActionEvent esdf) {
 // TODO Auto-generated method stub
 try {
+    neighbor = textmain.getNeighbor();
 filepath = jTextField1.getText();
 showDirectedGraph(neighbor, filepath, pmdl);
 showlabel1();
@@ -547,7 +559,7 @@ e1.printStackTrace();
 });
 jButton3.addActionListener(new ActionListener() {
 @Override
-public void actionPerformed(final ActionEvent esdf) {
+public void actionPerformed(  ActionEvent esdf) {
 // TODO Auto-generated method stub
 jTextArea1.setText(queryBridgeWords(jTextField2.getText(),
 jTextField3.getText()));
@@ -555,14 +567,14 @@ jTextField3.getText()));
 });
 jButton4.addActionListener(new ActionListener() {
 @Override
-public void actionPerformed(final ActionEvent esdf) {
+public void actionPerformed(  ActionEvent esdf) {
 // TODO Auto-generated method stub
 jTextArea1.setText(generateNewText(jTextArea1.getText()));
 }
 });
 jButton5.addActionListener(new ActionListener() {
 @Override
-public void actionPerformed(final ActionEvent esdf) {
+public void actionPerformed(  ActionEvent esdf) {
 // TODO Auto-generated method stub
 try {
 jTextArea1.setText(calcShortestPath(jTextField2.getText(),
@@ -576,76 +588,76 @@ e1.printStackTrace();
 });
 jButton6.addActionListener(new ActionListener() {
 @Override
-public void actionPerformed(final ActionEvent esdf) {
+public void actionPerformed(  ActionEvent esdf) {
 jTextArea1.setText(randomWalk());
 showlabel1();
 }
 });
 jTextField1.addMouseListener(new MouseListener() {
 @Override
-public void mouseClicked(final MouseEvent esdf) {
+public void mouseClicked(  MouseEvent esdf) {
          jTextField1.setText("");
           }
          @Override
-         public void mouseEntered(final MouseEvent esdf) {
+         public void mouseEntered(  MouseEvent esdf) {
          // TODO Auto-generated method stub
            }
            @Override
- public void mouseExited(final MouseEvent esdf) {
+ public void mouseExited(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mousePressed(final MouseEvent esdf) {
+public void mousePressed(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mouseReleased(final MouseEvent esdf) {
+public void mouseReleased(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 });
 jTextField2.addMouseListener(new MouseListener() {
 @Override
-public void mouseClicked(final MouseEvent esdf) {
+public void mouseClicked(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 jTextField2.setText("");
 }
 @Override
-public void mouseEntered(final MouseEvent esdf) {
+public void mouseEntered(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mouseExited(final MouseEvent esdf) {
+public void mouseExited(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mousePressed(final MouseEvent esdf) {
+public void mousePressed(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mouseReleased(final MouseEvent esdf) {
+public void mouseReleased(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 });
 jTextField3.addMouseListener(new MouseListener() {
 @Override
-public void mouseClicked(final MouseEvent esdf) {
+public void mouseClicked(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 jTextField3.setText("");
 }
 @Override
-public void mouseEntered(final MouseEvent esdf) {
+public void mouseEntered(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mouseExited(final MouseEvent esdf) {
+public void mouseExited(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mousePressed(final MouseEvent esdf) {
+public void mousePressed(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 @Override
-public void mouseReleased(final MouseEvent esdf) {
+public void mouseReleased(  MouseEvent esdf) {
 // TODO Auto-generated method stub
 }
 });
@@ -653,7 +665,7 @@ public void mouseReleased(final MouseEvent esdf) {
 /**
  * @param args ARGS.
   */
-public static void main(final String[] args) {
+public static void main(  String[] args) {
 pmdl = new Hi();
 pmdl.setVisible(true);
 }
@@ -661,74 +673,19 @@ pmdl.setVisible(true);
  *
  */
 private void showlabel1() {
-final ImageIcon icon = new ImageIcon("E:/软件工程/实验/实验1jpg");
+  ImageIcon icon = new ImageIcon("E:/软件工程/实验/实验1jpg");
 icon.setImage(icon.getImage().getScaledInstance(
 jLabel1.getWidth(), jLabel1.getHeight(),
 Image.SCALE_DEFAULT));
 jLabel1.setIcon(icon);
 }
 /**
- * @param nei is a
- * @param nUm is a number
- */
-public void graphBuild(final Map<String, Integer> nei,
-final Map<String, Integer> nUm) {
-final int numsize = nUm.size();
-graph = new int[numsize + 1][];
-for (int i = 0; i <= numsize; i++) {
-graph[i] = new int[numsize + 1];
-}
-for (int i = 0; i <= numsize; i++) {
-for (int j = 0; j <= numsize; j++) {
-graph[i][j] = CAB;
-}
-}
-final Set<Entry<String, Integer>> sets = nei.entrySet();
-for (final Entry<String, Integer> entry : sets) {
-final String[] list = entry.getKey().split(" -> ");
-graph[nUm.get(list[0])][nUm.get(list[1])] = entry.getValue();
-}
-}
-/**
- * @param list LIST.
- */
-public void wordNum(final String[] list) { //给已出现单词标序号
-int count = 0;
-for (int i = 0; i < list.length; i++) {
-if (!numWord.containsKey(list[i])) {
-numWord.put(list[i], count);
-word.put(count++, list[i]);
-}
-}
-numofWord = count;
-}
-/**
- * @param list LISTR
- */
-public void mapCount(final String[] list) { //边出现次数统计与记录
-String temp;
-for (int i = 0; i < list.length - 1; i++) {
-arraylist.add(new HashSet<Integer>());
-}
-for (int i = 0; i < list.length - 1; i++) {
-temp = list[i] + " -> " + list[i + 1];
-if (neighbor.containsKey(temp)) {
-final Integer count = neighbor.get(temp) + 1;
-neighbor.put(temp, count);
-} else {
-neighbor.put(temp, 1);
-}
-arraylist.get(numWord.get(list[i])).add(numWord.get(list[i + 1]));
-pathRecord.put(temp, 0);
-}
-}
-/**
  * @param filename FILE.
  * @return RETURN.
  * @throws IOException IOEC.
  */
-public String readFile(final String filename) throws IOException { //读文件
-final BufferedReader file = new BufferedReader(new FileReader(filename));
+public String readFile(  String filename) throws IOException { //读文件
+  BufferedReader file = new BufferedReader(new FileReader(filename));
 String text = "";
 String line = file.readLine();
 while (line != null) {
@@ -744,23 +701,23 @@ return text;
  * @param pops P.
  * @throws IOException IOEV.
  */
-public void showDirectedGraph(final Map<String, Integer> list,
-final String path, final Hi pops) throws IOException {
+public void showDirectedGraph(  Map<String, Integer> list,
+  String path,   Hi pops) throws IOException {
 //展示有向图，并存为.jpg
 String text = pops.readFile(path);
-text = text.replaceAll("[^a-zA-Z]", " ").toLowerCase();
-final String[] wordlist = text.split("\\s+");
-neighbor.clear();
-numWord.clear();
-pops.wordNum(wordlist);
-pops.mapCount(wordlist);
-pops.graphBuild(neighbor, numWord);
+textmain.setText(text);
+//neighbor.clear();
+//numWord.clear();
+pops.textmain.wordNum();
+pops.textmain.mapCount();
+pops.graphmain.graphBuild(pops.textmain.getNeighbor(), pops.textmain.getNumWord());
 //p.showDirectedGraph(neighbor);
-final GraphViz gvce = new GraphViz();
+GraphViz gvce = new GraphViz();
 gvce.addln(gvce.sTart());
-final Set<Entry<String, Integer>> sets = list.entrySet();
-for (final Entry<String, Integer> entry : sets) {
-final String tyui = entry.getKey();
+Set<Entry<String, Integer>> sets = list.entrySet();
+for (Entry<String, Integer> entry : sets) {
+  String tyui = entry.getKey();
+  neiColor = pops.textmain.getNeiColor();
         if (neiColor.containsKey(tyui)) {
  gvce.addln(tyui + " [ label = " + "\""
         + entry.getValue().toString()
@@ -771,10 +728,9 @@ final String tyui = entry.getKey();
        }
        }
 gvce.addln(gvce.eNd());
-//System.out.println(gvce.getDotSource());
-//System.out.println("看见了吗");
-final String type = "jpg";
-final File out = new File("E:/软件工程/实验/实验1" + type);
+
+String type = "jpg";
+File out = new File("E:/软件工程/实验/实验1" + type);
 gvce.writeGraphToFile(gvce.getGraph(gvce.getDotSource(), type), out);
 }
 /**
@@ -782,8 +738,11 @@ gvce.writeGraphToFile(gvce.getGraph(gvce.getDotSource(), type), out);
  * @param word2 WORD2.
  * @return RETURNV.
  */
-public String queryBridgeWords(final String word1, final String word2) {
+public String queryBridgeWords(String word1, String word2) {
 String bridgewords = "不存在";
+numWord = textmain.getNumWord();
+graph = graphmain.getGraph();
+word = textmain.getWord();
 if (!numWord.containsKey(word1)) {
 bridgewords += (" " + word1);
 }
@@ -792,19 +751,13 @@ bridgewords += (" " + word2);
 }
 if (numWord.containsKey(word1) && numWord.containsKey(word2)) {
 bridgewords = "";
-final int word1num = numWord.get(word1);
-final int word2num = numWord.get(word2);
+  int word1num = numWord.get(word1);
+  int word2num = numWord.get(word2);
 for (int i = 0; i < numWord.size(); i++) {
-final int num3 = graph[word1num][i] + graph[i][word2num];
+  int num3 = graph[word1num][i] + graph[i][word2num];
 if (i != word1num && i != word2num && num3 >= 2
 && num3 < CAB) {
-//Set<Entry<String, Integer>> sets = numWord.entrySet();
-//for(Entry<String, Integer> entry : sets) {
-//if(numWord.get(entry.getKey()) == i){
-//bridgewords += (entry.getKey() +" ");
-//break;
-//}
-//}
+
 bridgewords += (word.get(i) + " ");
 }
 }
@@ -818,16 +771,16 @@ return bridgewords;
  * @param inputText INPUT.
  * @return RETURNL.
  */
-public String generateNewText(final String inputText) {
+public String generateNewText(String inputText) {
 int jdfg;
 String newText = "", bridge = "";
-final String[] text = inputText.split("\\s+");
+String[] text = inputText.split("\\s+");
 for (int i = 0; i < text.length - 1; i++) {
 bridge = queryBridgeWords(text[i], text[i + 1]);
 if (bridge != "不存在桥接词") {
-final String[] bwer = bridge.split("\\s+");
-final int length = bwer.length;
-final Random rsed = new Random();
+  String[] bwer = bridge.split("\\s+");
+  int length = bwer.length;
+  Random rsed = new Random();
 jdfg = rsed.nextInt(length);
 newText += (text[i] + " " + bwer[jdfg] + " ");
 } else {
@@ -837,26 +790,15 @@ newText += (text[i] + " ");
 return (newText + text[text.length - 1]);
 } //根据bridge word生成新文本
 /**
- * @param list LISTD.
- * @param count COUNT.
- */
-private void mapColor(final String[] list, final int count) {  //边出现次数统计与记录
-  String temp;
-    for (int i = list.length - 1; i > 0; i--) {
-   temp = list[i] + " -> " + list[i - 1];
-   if (!neiColor.containsKey(temp)) {
-   neiColor.put(temp, "color = " + useColor[count]);
-   }
-   }
-   }
-/**
  * @param word1 WORD1;
  * @param word2 WORD2.
  * @return RETURN.
  * @throws IOException IOEQ.
  */
-private String calcShortestPath(final String word1, final String word2)
+public String calcShortestPath( String word1, String word2)
 throws IOException {
+    numWord = textmain.getNumWord();
+    word = textmain.getWord();
 String nPath = "不存在";
 if (!numWord.containsKey(word1)) {
 nPath += (" " + word1);
@@ -869,13 +811,14 @@ if (!word2.equals("")) {
 }
 if (numWord.containsKey(word1) && (numWord.containsKey(word2)
 || word2.equals(""))) {
-final int nzxc = numWord.size();
-final int vasd = numWord.get(word1);
+  int nzxc = numWord.size();
+  int vasd = numWord.get(word1);
 String rePath = "";
 nPath = "";
 boolean[] flag = new boolean[nzxc + 1];
 int[] dis = new int[nzxc + 1];
 int[] path = new int[nzxc + 1];
+graph = graphmain.getGraph();
 for (int i = 0; i < nzxc; i++) {
 dis[i] = graph[vasd][i];
 if (dis[i] == CAB) {
@@ -904,7 +847,7 @@ path[j] = u;
 }
 }
 if (numWord.containsKey(word2)) {
-final int eqwe = numWord.get(word2);
+  int eqwe = numWord.get(word2);
 int frfg = eqwe;
 while (path[frfg] != nzxc) {
 rePath += (word.get(frfg) + " ");
@@ -912,9 +855,10 @@ frfg = path[frfg];
 }
 if (!rePath.equals("")) {
 rePath += word.get(frfg);
-final String[] text = rePath.split(" ");
+  String[] text = rePath.split(" ");
 neiColor.clear();
-mapColor(text, 0);
+textmain.mapColor(text);
+neiColor = textmain.getNeiColor();
 showDirectedGraph(neighbor, filepath, pmdl);
 nPath += word1;
 for (int i = text.length - 2; i >= 0; i--) {
@@ -931,7 +875,7 @@ fert = path[fert];
 }
 if (xcvb.equals("")) {
 xcvb += word.get(fert);
-final String[] text = xcvb.split(" ");
+  String[] text = xcvb.split(" ");
 rePath += word1;
 for (int j = text.length - 2; j >= 0; j--) {
 rePath += ("->" + text[j]);
@@ -950,14 +894,18 @@ return nPath;
 /**
 * @return RETURND.
  */
-private static String randomWalk() {
-Map<String, Integer> pAth
-= (Map<String, Integer>) ((HashMap<String, Integer>) pathRecord).clone();
+public String randomWalk() {
+    
+Map<String, Integer> pAth = textmain.getPathRecord();
 neiColor.clear();
+neiColor = textmain.getNeiColor();
+arraylist = textmain.getArraylist();
+neighbor = textmain.getNeighbor();
+word = textmain.getWord();
 Random r1 = new Random();
 Random r2 = new Random();
 //System.out.println(numofWord);
-int begin = r1.nextInt(numofWord);
+int begin = r1.nextInt(textmain.getNumofWord());
 StringBuffer rAndom = new StringBuffer();
 Integer[] nextarray = arraylist.get(begin).toArray(
 new Integer[arraylist.get(begin).size()]);
@@ -1047,7 +995,7 @@ FileWriter fw = null;
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+        }  finally {
             try {
                 if(writer!=null)
                 writer.close();

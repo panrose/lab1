@@ -15,18 +15,17 @@ public class Hitestw {
     @Before
     public void setUp() throws Exception {
         hi = new Hi();
-        text=hi.readFile("D:\\360Downloads\\a.txt");
+        text=hi.readFile("E:\\软件工程\\实验\\实验1\\example.txt");
     }
 
     @Test
     public void test() {
-        text = text.replaceAll("[^a-zA-Z]", " ").toLowerCase();
-        String[] wordlist = text.split("\\s+");
         hi.neighbor.clear();
-        hi.numWord.clear();
-        hi.wordNum(wordlist);
-        hi.mapCount(wordlist);
-        hi.graphBuild(hi.neighbor, hi.numWord);
+        hi.getTextmain().setText(text);
+        hi.getTextmain().wordNum();
+        hi.getTextmain().mapCount();
+        hi.getGraphmain().graphBuild(hi.getTextmain().getNeighbor(), hi.getTextmain().getNumWord());
+        
         String []test= {"","the makes happy like in","can the"};
         String []testresult= {"","the swimming makes me happy i like summer in","can the"};
         for(int i=0;i<3;i++) {

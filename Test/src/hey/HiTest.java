@@ -11,18 +11,16 @@ public class HiTest {
     @Before
     public void setUp() throws Exception {
          hi = new Hi();
-         text=hi.readFile("D:\\360Downloads\\a.txt");
+         text=hi.readFile("E:\\软件工程\\实验\\实验1\\example.txt");
     }
 
     @Test
     public void test() {
-        text = text.replaceAll("[^a-zA-Z]", " ").toLowerCase();
-        String[] wordlist = text.split("\\s+");
         hi.neighbor.clear();
-        hi.numWord.clear();
-        hi.wordNum(wordlist);
-        hi.mapCount(wordlist);
-        hi.graphBuild(hi.neighbor, hi.numWord);
+        hi.getTextmain().setText(text);
+        hi.getTextmain().wordNum();
+        hi.getTextmain().mapCount();
+        hi.getGraphmain().graphBuild(hi.getTextmain().getNeighbor(), hi.getTextmain().getNumWord());
         String []test= {"不存在桥接词","wear ","summer the ","不存在 ","不存在 none1 none2"};
         String []testword1= {"can","can","in","summer","none1"};
         String []testword2= {"the","skirt","swimming","","none2"};
